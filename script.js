@@ -1,5 +1,5 @@
 // Theme switching functionality
-let isDarkMode = Math.random() < 0.5; // Random initial theme
+let isDarkMode = false;
 
 function toggleTheme() {
     isDarkMode = !isDarkMode;
