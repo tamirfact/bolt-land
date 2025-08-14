@@ -4,13 +4,7 @@
     padding: 0;
     box-sizing: border-box;
     overscroll-behavior: none; /* Prevents elastic scrolling & scroll chaining */
-
-     --color-light: #F6F9BD;
-    --color-dark: #061611;
-    --color-accent: #323725;
-    --feature-card-color: #F6F9BD;
-    --feature-card-text-color: #061611;
-    
+   
 /* 
     --color-light: #061611;
     --color-dark: #FFF;
@@ -20,6 +14,14 @@
 }
 html {
     background: var(--color-dark);
+     
+    --color-orange:#FF811A;
+    --color-light: #F6F9BD;
+    --color-dark: #061611;
+    --color-accent: #323725;
+    --feature-card-color: #F6F9BD;
+    --feature-card-text-color: #061611;
+    
 }
 
 body {
@@ -135,7 +137,7 @@ body {
     height: 50vh;
     display: flex;
     align-items: stretch;
-    background: radial-gradient(73.8% 64.79% at 49.27% 100%, #ffb477 0%, #FF811A 20%, var(--color-dark) 90%);
+    background: radial-gradient(73.8% 64.79% at 49.27% 100%, #ffb477 0%, var(--color-orange) 20%, var(--color-dark) 90%);
     background-repeat: no-repeat;
     background-size: 200% 200%;
     background-position: var(--gradient-move);
@@ -212,7 +214,7 @@ body {
 .hero-part-1 {
     opacity: 1;
     height: 50vh;
-    background: radial-gradient(73.8% 64.79% at 49.27% 100%, #FF811A 0%, #FF811A 25.74%, var(--color-dark) 73.56%);
+    background: radial-gradient(73.8% 64.79% at 49.27% 100%, var(--color-orange) 0%, var(--color-orange) 25.74%, var(--color-dark) 73.56%);
     background-repeat: no-repeat;
     background-size: 200% 200%;
     background-position: var(--gradient-move);
@@ -418,7 +420,7 @@ animation: bgXMove 60s linear infinite;
 /* Footer Section */
 .footer {
     padding: 60px 0 24px;
-    background: radial-gradient(150.22% 113.22% at 2.1% 123.79%, #FF811A 0%, var(--color-accent) 73.56%);
+    background: radial-gradient(150.22% 113.22% at 2.1% 123.79%, var(--color-orange) 0%, var(--color-accent) 73.56%);
 }
 
 .footer-content {
