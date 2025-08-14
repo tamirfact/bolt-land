@@ -5,23 +5,11 @@
     box-sizing: border-box;
     overscroll-behavior: none; /* Prevents elastic scrolling & scroll chaining */
    
-/* 
-    --color-light: #061611;
-    --color-dark: #FFF;
-    --color-accent: #FAF5F0;
-    --feature-card-color: #FF811A;
-    --feature-card-text-color: #F6F9BD; */
+
+   
 }
 html {
     background: var(--color-dark);
-     
-    --color-orange:#FF811A;
-    --color-light: #F6F9BD;
-    --color-dark: #061611;
-    --color-accent: #323725;
-    --feature-card-color: #F6F9BD;
-    --feature-card-text-color: #061611;
-    
 }
 
 body {
@@ -65,6 +53,12 @@ body {
     z-index: 1000;
     position: fixed;
     mix-blend-mode: difference;
+
+
+}
+
+.header.dark-mode {
+    mix-blend-mode:multiply;
 
 }
 

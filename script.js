@@ -1,5 +1,57 @@
-  // Smooth scroll functionality for Contact Us buttons
-  document.addEventListener('DOMContentLoaded', function() {
+// Theme switching functionality
+let isDarkMode = Math.random() < 0.5; // Random initial theme
+
+function toggleTheme() {
+    isDarkMode = !isDarkMode;
+    updateTheme();
+}
+
+function updateTheme() {
+    const root = document.documentElement;
+    const header = document.querySelector('.header');
+    
+    if (isDarkMode) {
+        // Dark theme
+        root.style.setProperty('--color-orange', '#FF811A');
+        root.style.setProperty('--color-light', '#061611');
+        root.style.setProperty('--color-dark', '#FFF');
+        root.style.setProperty('--color-accent', '#FAF5F0');
+        root.style.setProperty('--feature-card-color', '#FF811A');
+        root.style.setProperty('--feature-card-text-color', '#F6F9BD');
+        
+        // Add dark-mode class to header
+        console.log(header);
+        if (header) {
+            header.classList.add('dark-mode');
+        }
+    } else {
+        // Light theme
+        root.style.setProperty('--color-orange', '#FF811A');
+        root.style.setProperty('--color-light', '#F6F9BD');
+        root.style.setProperty('--color-dark', '#061611');
+        root.style.setProperty('--color-accent', '#323725');
+        root.style.setProperty('--feature-card-color', '#F6F9BD');
+        root.style.setProperty('--feature-card-text-color', '#061611');
+        
+        // Remove dark-mode class from header
+        if (header) {
+            header.classList.remove('dark-mode');
+        }
+    }
+}
+
+// Initialize theme on page load
+document.addEventListener('DOMContentLoaded', function() {
+    updateTheme();
+    
+    // Add click event to logo
+    const logo = document.querySelector('.logo-container');
+    if (logo) {
+        logo.addEventListener('click', toggleTheme);
+        logo.style.cursor = 'pointer'; // Add pointer cursor to indicate it's clickable
+    }
+    
+    // Smooth scroll functionality for Contact Us buttons
     const contactButtons = document.querySelectorAll('.contact-btn');
     const contactSection = document.getElementById('contact');
     
@@ -57,7 +109,7 @@
     const heroPart1 = document.querySelector('.hero-part-1');
     const heroPart2 = document.querySelector('.hero-part-2');
     
-                function updateHeroGradient() {
+    function updateHeroGradient() {
         if (!hero) return;
         
         const heroRect = hero.getBoundingClientRect();
@@ -75,7 +127,7 @@
         
         // Interpolate color from #FF811A to #F6F9BD based on scroll
         const startColor = { r: 255, g: 129, b: 26 }; // #FF811A
-        const endColor = { r: 255, g: 255, b: 255 }; // #F6F9BD
+        const endColor = { r: 255, g: 26, b: 26 }; // 
         
         const interpolatedColor = {
             r: Math.round(startColor.r + (endColor.r - startColor.r) * (scrollProgress-.5)),
