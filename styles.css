@@ -557,3 +557,22 @@ textarea:focus {
     outline: 2px solid var(--color-light);
     outline-offset: 2px;
 } 
+
+
+#caret {
+    animation: blink 1s infinite;
+    color: var(--feature-card-text-color);
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+#typed-text {
+    color: var(--feature-card-text-color);
+}
+
+.feature-description {
+    min-height: 4.5em; /* Maintain consistent height during typing */
+}

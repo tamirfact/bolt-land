@@ -98,8 +98,8 @@
                             
                     </div>
                     <div class="card-text">
-                        <p class="feature-description">
-                            We develop intelligent co-pilots that empower anyone, regardless of experience, to diagnose and maintain complex machinery with precision and autonomy.
+                        <p class="feature-description" id="typing-text">
+                            <span id="typed-text"></span><span id="caret">|</span>
                         </p>
                     </div>
               
@@ -180,6 +180,43 @@
                     }
                 });
             });
+            
+            // Typing effect functionality
+            const textToType = "We develop intelligent co-pilots that empower anyone, regardless of experience, to diagnose and maintain complex machinery with precision and autonomy.";
+            const typedTextElement = document.getElementById('typed-text');
+            const caretElement = document.getElementById('caret');
+            let currentIndex = 0;
+            let isTyping = false;
+            
+            function typeText() {
+                if (currentIndex < textToType.length) {
+                    typedTextElement.textContent += textToType[currentIndex];
+                    currentIndex++;
+                    setTimeout(typeText, 20); // Adjust speed here (50ms = fast, 100ms = medium, 150ms = slow)
+                } else {
+                    // Typing complete - hide caret after a delay
+                    setTimeout(() => {
+                        // caretElement.style.display = 'none';
+                    }, 1000);
+                }
+            }
+            
+            // Intersection Observer to trigger typing when section is visible
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !isTyping) {
+                        isTyping = true;
+                        typeText();
+                    }
+                });
+            }, {
+                threshold: 0.3 // Trigger when 30% of the section is visible
+            });
+            
+            const featureSection = document.querySelector('.feature');
+            if (featureSection) {
+                observer.observe(featureSection);
+            }
         });
     </script>
 </body>
