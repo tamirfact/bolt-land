@@ -64,7 +64,7 @@
                         </filter>
                         </defs>
                         </svg>
-                        
+                        <span class="header-label">Launching Soon</span>
                 </div>
                 <button class="contact-btn header-contact">Contact Us</button>
             </div>
@@ -98,9 +98,13 @@
                 </p>
                 <button class="contact-btn hero-contact">Contact Us</button>
             </div>
+
         </div>
        
     </section>
+    <!-- <section class="logos">
+      
+    </section> -->
 
     <!-- Feature Section -->
     <section class="feature">
@@ -109,7 +113,7 @@
                
                 <div class="card-content">
                     <div class="card-header">
-                        <span class="card-label">A MULTI-MODAL SENSING DEVICE</span>
+                        <span class="card-label">PHYSICAL CO-PILOT FOR MAINTENANCE TEAMS</span>
                         <svg width="36" height="11" viewBox="0 0 36 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9.69238 10.3464H0V0.654053H9.69238V10.3464ZM4.83496 3.0144C3.46813 3.01453 2.36055 4.1222 2.36035 5.48901C2.36035 6.856 3.46801 7.96447 4.83496 7.9646C6.20202 7.9646 7.31055 6.85608 7.31055 5.48901C7.31035 4.12212 6.2019 3.0144 4.83496 3.0144Z" fill="#061813"/>
                             <path d="M23.0547 5.50024L20.335 10.217H14.8945L12.1748 5.50024L14.8945 0.783447H20.335L23.0547 5.50024ZM17.6143 3.1272C16.3473 3.12745 15.3204 4.18959 15.3203 5.50024C15.3203 6.811 16.3472 7.87401 17.6143 7.87427C18.8815 7.87427 19.9092 6.81116 19.9092 5.50024C19.9091 4.18944 18.8814 3.1272 17.6143 3.1272Z" fill="#061813"/>
@@ -128,6 +132,29 @@
                     <img src="img.png" alt="Cleanroom environment with technicians working with ABB robot" class="feature-img">
                 </div>
             </div>
+
+
+            <div class="logos-content">
+                <h2 class="logos-title">Trusted by Industry Leaders:</h2>
+    
+                    <div class="logo-item">
+                        <img src="logo1.png" alt="Logo 1">
+                    </div>
+                    <div class="logo-item">
+                        <img src="logo2.png" alt="Logo 2">
+                    </div>
+                    <div class="logo-item">
+                        <img src="logo3.png" alt="Logo 3">
+                    </div>
+                    <div class="logo-item">
+                        <img src="logo4.png" alt="Logo 4">
+                    </div>
+                    <div class="logo-item">
+                        <img src="logo5.png" alt="Logo 5">
+                    </div>
+                </div>
+
+
         </div>
     </section>
 
@@ -136,28 +163,41 @@
         <div class="container">
             <div class="contact-content">
                 <h2 class="contact-title">CONTACT US</h2>
-                <form class="contact-form">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <input type="text" id="firstName" name="firstName" placeholder="First Name" class="form-input">
+                <div id="contact-container">
+                    <!-- <form id="contact" class="contact-form" action="https://formspree.io/f/xrbldjrb" method="POST"> -->
+                        <form id="contact" class="contact-form" action="https://formspree.io/f/fd" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" id="firstName" name="first_name" placeholder="First Name" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="lastName" name="last_name" placeholder="Last Name" class="form-input">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" placeholder="Email Address" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" id="phone" name="phone" placeholder="Phone Number" class="form-input">
+                            </div>
                         </div>
                         <div class="form-group">
-                            <input type="text" id="lastName" name="lastName" placeholder="Last Name" class="form-input">
+                            <textarea id="message" name="message" placeholder="Message" class="form-textarea" required></textarea>
                         </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Email Address" class="form-input">
+                        
+                        <!-- honeypot (spam trap) -->
+                        <input type="text" name="_gotcha" style="display:none">
+                        
+                        <!-- optional subject -->
+                        <input type="hidden" name="_subject" value="New message from BoltX">
+                        
+                        <button type="submit" class="submit-btn">Submit</button>
+                        <div class="small-label">
+                            or contact us directly at <a href="mailto:noam@boltt.ai">noam@boltt.ai</a>
                         </div>
-                        <div class="form-group">
-                            <input type="tel" id="phone" name="phone" placeholder="Phone Number" class="form-input">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" placeholder="Message" class="form-textarea"></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Submit</button>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -176,7 +216,7 @@
                         <path d="M61.6523 5.26074L64.7051 0.245117H68.7402L63.7676 8.00879L68.7832 15.707H64.5957L61.543 10.6914L58.5117 15.707H54.4551L59.4492 7.96484L54.4551 0.245117H58.5986L61.6523 5.26074Z" fill="#061611"/>
                         </svg>
                         
-                    <p class="footer-copyright">COPYRIGHT © 2024 BOLTT - ALL RIGHTS RESERVED</p>
+                    <p class="footer-copyright">COPYRIGHT © 2025 BOLTT - ALL RIGHTS RESERVED</p>
                 </div>
             </div>
         </div>
@@ -261,6 +301,56 @@
         
         // Start animated favicon when page loads
         document.addEventListener('DOMContentLoaded', createAnimatedFavicon);
+        
+        // Formspree form submission
+        document.getElementById('contact').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const form = e.target;
+            const submitBtn = form.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            const contactContainer = document.getElementById('contact-container');
+            
+            // Show loading state
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            try {
+                const data = new FormData(form);
+                const res = await fetch(form.action, { 
+                    method: 'POST', 
+                    body: data, 
+                    headers: { 'Accept': 'application/json' }
+                });
+                
+                if (res.ok) { 
+                    // Remove form and show success message
+                    contactContainer.innerHTML = `
+                        <div class="success-message">
+                            <h3>Thank you!</h3>
+                            <p>We've received your message and will be in touch soon.</p>
+                        </div>
+                    `;
+                } else { 
+                    // Show error message
+                    contactContainer.innerHTML = `
+                        <div class="error-message">
+                            <h3>Something went wrong</h3>
+                            <p>Please email us directly at <a href="mailto:noam@boltt.ai">noam@boltt.ai</a></p>
+                            <button onclick="location.reload()" class="submit-btn">Try Again</button>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                // Show error message
+                contactContainer.innerHTML = `
+                    <div class="error-message">
+                        <h3>Something went wrong</h3>
+                        <p>Please email us directly at <a href="mailto:noam@boltt.ai">noam@boltt.ai</a></p>
+                        <button onclick="location.reload()" class="submit-btn">Try Again</button>
+                    </div>
+                `;
+            }
+        });
     </script>
 </body>
 </html> 
