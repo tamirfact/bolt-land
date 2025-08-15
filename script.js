@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Typing effect functionality
-    const textToType = "We develop intelligent co-pilots that empower anyone, regardless of experience, to diagnose and maintain complex machinery with precision and autonomy.";
+    const textToType = "The skilled-labor shortage is pushing manufacturers to their limits. BoltX is a Physical AI company built to meet that moment. At our core is a multi-modal AI brain, purpose-built for Maintenance, forged from deep manufacturing expertise and the latest advances in AI and robotics.";
     const typedTextElement = document.getElementById('typed-text');
     const caretElement = document.getElementById('caret');
     let currentIndex = 0;

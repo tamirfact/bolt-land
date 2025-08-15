@@ -79,10 +79,10 @@
                 <div class="hero-content">
 
                 <div class="hero-label">
-                    <span class="label-text">A MULTI-MODAL SENSING DEVICE</span>
+                    <span class="label-text">PHYSICAL CO-PILOT FOR MAINTENANCE TEAMS</span>
                 </div>
                 <h1 class="hero-headline">
-                    Powering a New Age<br>of Machine Meisters
+                    Powering a New Age<br>of Machine Experts
                 </h1>
                 </div>
                 </div>
@@ -94,7 +94,7 @@
             <div class="hero-content">
             
                 <p class="hero-description">
-                    BoltX is a Physical AI company tackling the skilled-labor crisis in manufacturing head on.
+                    BoltX is a Physical AI company tackling the skilled-labor crisis in industrial maintenance head on.
                 </p>
                 <button class="contact-btn hero-contact">Contact Us</button>
             </div>
@@ -166,7 +166,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p class="footer-tagline">BoltX is powering the new age<br>of machine masters</p>
+                <p class="footer-tagline">BoltX is powering the new age<br>of machine Experts</p>
                 <div class="footer-bottom">
                     <svg width="69" height="16" viewBox="0 0 69 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M21.9297 0C26.3478 0.000106946 29.9297 3.58184 29.9297 8C29.9296 12.4181 26.3478 15.9999 21.9297 16C17.5115 16 13.9297 12.4182 13.9297 8C13.9297 3.58178 17.5115 0 21.9297 0ZM17.9307 12H25.9307V4H17.9307V12Z" fill="#061611"/>
@@ -187,5 +187,80 @@
     </style>
 
     <script src="script.js"></script>
+    
+    <script>
+        // Animated favicon using canvas
+        function createAnimatedFavicon() {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            const size = 32; // Favicon size
+            const radius = 6; // Corner radius
+            canvas.width = size;
+            canvas.height = size;
+            
+            const img = new Image();
+            img.onload = function() {
+                let rotation = 0;
+                
+                function animate() {
+                    // Clear canvas
+                    ctx.clearRect(0, 0, size, size);
+                    
+                    // Create rounded rectangle clipping path
+                    ctx.save();
+                    ctx.beginPath();
+                    ctx.moveTo(radius, 0);
+                    ctx.lineTo(size - radius, 0);
+                    ctx.quadraticCurveTo(size, 0, size, radius);
+                    ctx.lineTo(size, size - radius);
+                    ctx.quadraticCurveTo(size, size, size - radius, size);
+                    ctx.lineTo(radius, size);
+                    ctx.quadraticCurveTo(0, size, 0, size - radius);
+                    ctx.lineTo(0, radius);
+                    ctx.quadraticCurveTo(0, 0, radius, 0);
+                    ctx.closePath();
+                    ctx.clip();
+                    
+                    // Background color #FF811A
+                    ctx.fillStyle = '#FF811A';
+                    ctx.fillRect(0, 0, size, size);
+                    
+                    // Calculate image size and position
+                    const imgSize = Math.min(size * 0.6, img.width, img.height);
+                    
+                    // Save context, rotate, draw image, restore context
+                    ctx.save();
+                    ctx.translate(size / 2, size / 2);
+                    ctx.rotate(rotation);
+                    ctx.drawImage(img, -imgSize / 2, -imgSize / 2, imgSize, imgSize);
+                    ctx.restore();
+                    
+                    // Restore context to remove clipping
+                    ctx.restore();
+                    
+                    // Update rotation
+                    rotation += 0.1; // Small rotation increment
+                    
+                    // Update favicon
+                    const link = document.querySelector('link[rel="icon"]') || document.createElement('link');
+                    link.rel = 'icon';
+                    link.href = canvas.toDataURL();
+                    if (!document.querySelector('link[rel="icon"]')) {
+                        document.head.appendChild(link);
+                    }
+                    
+                    // Continue animation
+                    setTimeout(animate, 100); // 0.1s interval
+                }
+                
+                animate();
+            };
+            
+            img.src = 'Subtract.png';
+        }
+        
+        // Start animated favicon when page loads
+        document.addEventListener('DOMContentLoaded', createAnimatedFavicon);
+    </script>
 </body>
 </html> 
